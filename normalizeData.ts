@@ -4,7 +4,7 @@ interface Post {
   body: string;
 }
 
-type ValueOfPostId<T extends Post> = Post['id']; // можно и без дженерика и еще проще - но с ним нагляднее - type ValueOfPostId = Post['id']
+type ValueOfPostId<T extends Post> = T['id']; // можно и без дженерика и еще проще - но с ним нагляднее - type ValueOfPostId = Post['id']
 
 type RecordById = Record<ValueOfPostId<Post>, Post>;
 
